@@ -38,15 +38,25 @@ const App = () => {
     <div>
       <Header logo={deliverooLogo} data={data} />
       <main>
-        <div className="meals">
-          <div className="sections">
-            {data.categories.map((category, index) => {
-              return <Category category={category} index={index} />;
-            })}
+        <div className="container">
+          <div className="meals">
+            <div className="sections">
+              {data.categories.map((category, index) => {
+                return (
+                  <>
+                    {category.meals.length != 0 && (
+                      <section key={category.name} className={category.name}>
+                        <Category category={category} index={index} />
+                      </section>
+                    )}
+                  </>
+                );
+              })}
+            </div>
+            <aside>
+              <Panier />
+            </aside>
           </div>
-          <aside>
-            <Panier />
-          </aside>
         </div>
       </main>
 

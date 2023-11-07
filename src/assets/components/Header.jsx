@@ -6,7 +6,9 @@ const Header = ({ logo, data }) => {
       <header>
         <div className="topBar">
           <div className="container">
-            <img src={logo} alt="" />
+            <div className="logo">
+              <img id="logo-deliveroo" src={logo} alt="" />
+            </div>
           </div>
         </div>
 

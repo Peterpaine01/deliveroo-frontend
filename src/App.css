@@ -1,28 +1,35 @@
 /* GÉNÉRALES */
 
 :root {
-  --main-font-family: "Stratos Deliveroo Web", arial;
+  --main-font-family: "IBM Plex Sans", sans-serif;
+  --color-grey: #808484;
+  --color-grey-light: #868a8a;
+  --color-grey-dark: #2e3333;
+  --color-background: #f3f5f5;
 }
 
 body main {
   font-family: var(--main-font-family);
+  color: var(--color-grey);
+  background-color: var(--color-background);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "IBM Plex Sans", sans-serif;
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  font-family: var(--main-font-family);
+  color: var(--color-grey-dark);
 }
 
 .container {
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 body h1 {
-  font-family: "IBM Plex Sans", sans-serif;
   font-size: 32px;
   line-height: 38px;
   font-weight: 700;
@@ -30,10 +37,56 @@ body h1 {
   margin-top: 10px;
 }
 
+body h2 {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+body h3 {
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+body p {
+  font-size: 19px;
+  font-family: var(--main-font-family);
+  font-weight: 200;
+  color: var(--color-grey-light);
+  line-height: 1.5;
+}
+
 /* HEADER */
+
+header {
+  background-color: #fff;
+}
+
+header .topBar {
+  height: 60px;
+  border-bottom: 1px solid #e9ebeb;
+}
+
+header .topBar .logo {
+  display: flex;
+  padding: 0 15px;
+  align-content: center;
+  height: 60px;
+}
+
+#logo-deliveroo {
+  width: 156px;
+}
 
 .description {
   display: flex;
+  gap: 30px;
+  padding: 15px;
 }
 
 .description > div:first-child {
@@ -42,24 +95,99 @@ body h1 {
 
 .description > div:last-child {
   flex: 1;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .description div img {
-  width: 100%;
+  width: 350px;
 }
 
 /* MAIN */
 
 .meals {
   display: flex;
+  gap: 30px;
+  padding: 15px;
 }
 
 .meals .sections {
-  flex: 2;
+  width: calc(100% - 410px);
+}
+
+.meals section {
+  margin-bottom: 70px;
 }
 
 .meals aside {
-  flex: 1;
+  width: 350px;
+}
+
+.list-meals {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-meals article {
+  display: flex;
+  width: calc(100% / 2 - 16px);
+  height: 160px;
+  background-color: #fff;
+  padding: 15px;
+  flex-shrink: 0;
+  justify-content: space-evenly;
+  gap: 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.list-meals article:hover {
+  box-shadow: 00px 0px 30px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-meals article p {
+  font-size: 14px;
+  line-height: 21px;
+  height: 2.6rem;
+  overflow: hidden;
+}
+
+.list-meals article .meal-description {
+  flex: 2;
+  align-content: space-evenly;
+}
+
+.list-meals article aside {
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5px;
+}
+
+.list-meals article aside img {
+  height: 100%;
+}
+
+.list-meals .price p {
+  font-size: 18px;
+}
+
+.list-meals .bottom-meal {
+  display: flex;
+  margin-top: 10px;
+  gap: 15px;
+  height: 16px;
+}
+
+.popular p {
+  color: #ff8001;
+  font-weight: 600;
 }
 
 /* SECTIONS */
