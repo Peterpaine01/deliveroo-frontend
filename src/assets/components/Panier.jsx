@@ -1,11 +1,13 @@
 const Panier = ({ data, orderTab, setOrderTab }) => {
-  const handleClickCounter = (action, index, setOrderTab) => {
+  const handleClickCounter = (action, index) => {
     const newOrderTab = [...orderTab];
     if (action === "minus") {
       newOrderTab[index].number = newOrderTab[index].number - 1;
+      setOrderTab(newOrderTab);
     } else if (action === "plus") {
       newOrderTab[index].number = newOrderTab[index].number + 1;
     }
+    console.log(newOrderTab);
     setOrderTab(newOrderTab);
   };
   console.log(orderTab);
@@ -20,7 +22,7 @@ const Panier = ({ data, orderTab, setOrderTab }) => {
                 <div className="order-counter">
                   <button
                     onClick={() => {
-                      handleClickCounter("minus", index, setOrderTab);
+                      handleClickCounter("minus", index);
                     }}
                   >
                     -

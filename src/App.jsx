@@ -61,7 +61,11 @@ const App = () => {
               })}
             </div>
             <aside>
-              <Panier data={data} orderTab={orderTab} />
+              <Panier
+                data={data}
+                orderTab={orderTab}
+                setOrderTab={setOrderTab}
+              />
             </aside>
           </div>
         </div>
