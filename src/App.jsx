@@ -12,6 +12,8 @@ const App = () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   // const [categories, setCategories] = useState([]);
+  const [orderTab, setOrderTab] = useState([]);
+  // const [order, setOrder] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +31,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  console.log(data.categories);
+  // console.log(data.categories);
   // console.log(categories);
 
   return isLoading ? (
@@ -44,9 +46,14 @@ const App = () => {
               {data.categories.map((category, index) => {
                 return (
                   <>
-                    {category.meals.length != 0 && (
+                    {category.meals.length !== 0 && (
                       <section key={category.name} className={category.name}>
-                        <Category category={category} index={index} />
+                        <Category
+                          category={category}
+                          index={index}
+                          setOrderTab={setOrderTab}
+                          orderTab={orderTab}
+                        />
                       </section>
                     )}
                   </>
@@ -54,7 +61,7 @@ const App = () => {
               })}
             </div>
             <aside>
-              <Panier />
+              <Panier data={data} orderTab={orderTab} />
             </aside>
           </div>
         </div>
